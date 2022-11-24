@@ -1,0 +1,61 @@
+[
+    {
+        "service_id": "04",
+        "title": "ANTI AGING-TREATMENT",
+        "img": "https://ibb.co/SvsPD9S",
+        "price": "120.00",
+        "rating":4.5,
+        "description": "Get a look you’ll love While following Macy’s hygiene standards and maintaining social distancing, we’re offering services on a modified basis. From makeovers to consultations, our Beauty Advisors are ready with all the virtual and socially-distanced services you need to get a fab new look. Our Beauty Advisors will apply color to a face chart to showcase different looks and techniques. Take the chart with you to recreate the looks you love at home. Where COVID-19 regulations allow, get a real feel for brand-new products.Our Beauty Advisors will prepare them to try on the back of your hand  with single-use applicators. "
+       
+    
+    },
+    {
+        "service_id": "05",
+        "title": "MAKEUP SERVICES",
+        "img": "https://ibb.co/CMTMsZV",
+        "price": "220.00",
+        "rating":5,
+        "description": "At-home waxing can be an affordable method for hair removal, but it’s important to take precautions. Never wax sunburned or very sensitive skin, and don’t wax if you have taken isotretinoin in the last six months. It may also be a good idea to leave Brazilian waxes to the professionals, since the skin in that area is particularly delicate.For the best technique and results, dermatologists recommend the following tips:Ensure optimal hair length. Before waxing, make sure your hair is about one-fourth to three-fourths of an inch long. If hair is longer, trim it to a shorter length using safety scissors so that waxing will be less messy and painful.Avoid retinoid creams before waxing. Avoid using over-the-counter skin care products containing retinol and prescription retinoids two to five days prior to waxing your face to avoid removing skin along with your hair.Reduce discomfort. Since waxing can be painful for some people, consider ways to reduce discomfort. Taking over-the-counter pain medication, such as ibuprofen, or applying cold packs to the skin about 30 minutes before waxing, may help."
+       
+   
+    },
+    {
+        "service_id": "01",
+        "title": "DERMA ROLLER",
+        "img": "https://ibb.co/dQRf05N",
+        "price": "80.00",
+        "rating":4.5,
+        "description": "At-home waxing can be an affordable method for hair removal, but it’s important to take precautions. Never wax sunburned or very sensitive skin, and don’t wax if you have taken isotretinoin in the last six months. It may also be a good idea to leave Brazilian waxes to the professionals, since the skin in that area is particularly delicate.For the best technique and results, dermatologists recommend the following tips:Ensure optimal hair length. Before waxing, make sure your hair is about one-fourth to three-fourths of an inch long. If hair is longer, trim it to a shorter length using safety scissors so that waxing will be less messy and painful.Avoid retinoid creams before waxing. "
+        
+    },
+    {
+        "service_id": "02",
+        "title": "MOISTURIZING FACIAL",
+        "img": "https://ibb.co/nryzsqV",
+        "price": "150.00",
+        "description": "Face masks are one of the trendiest ways to care for your skin today, and for a good reason. Dermatologists say that when used correctly, skin masks can improve your skin in a number of different ways.Face masks can help absorb excess oils, open clogged pores, and reduce inflammation. And let’s admit it, skin masks also feel luxurious, and can be a fun way to give yourself a relaxed spa feeling in your own home.There are several types of face masks on the market today, and each provides different skin benefits. Some of the most popular mask types include:sheets,creams,gels,mud,clay. These may contain enzymes, antioxidants, and other active ingredients. Dermatologists typically recommend that you can use masks as little as once a week to as much as once a day."
+      
+   
+    },
+    {
+        "service_id": "03",
+        "title": "FACE MASK",
+        "img": "https://ibb.co/RHy02FC",
+        "price": "130.00",
+        "rating":4.8,
+        "description": "Face masks are one of the trendiest ways to care for your skin today, and for a good reason. Dermatologists say that when used correctly, skin masks can improve your skin in a number of different ways.Face masks can help absorb excess oils, open clogged pores, and reduce inflammation. And let’s admit it, skin masks also feel luxurious, and can be a fun way to give yourself a relaxed spa feeling in your own home.There are several types of face masks on the market today, and each provides different skin benefits. Some of the most popular mask types include:sheets,creams,gels,mud,clay. These may contain enzymes, antioxidants, and other active ingredients. Dermatologists typically recommend that you can use masks as little as once a week to as much as once a day."
+        
+ 
+    },
+    {
+        "service_id": "06",
+        "title": "WAXING",
+     
+        "img": "https://i.ibb.co/QDtR74N/waxing.jpg",
+        "price": "120.00",
+        "rating":4.4,
+        "description": "At-home waxing can be an affordable method for hair removal, but it’s important to take precautions. Never wax sunburned or very sensitive skin, and don’t wax if you have taken isotretinoin in the last six months. It may also be a good idea to leave Brazilian waxes to the professionals, since the skin in that area is particularly delicate.For the best technique and results, dermatologists recommend the following tips:Ensure optimal hair length. Before waxing, make sure your hair is about one-fourth to three-fourths of an inch long. If hair is longer, trim it to a shorter length using safety scissors so that waxing will be less messy and painful.Avoid retinoid creams before waxing. Avoid using over-the-counter skin care products containing retinol and prescription retinoids two to five days prior to waxing your face to avoid removing skin along with your hair.Reduce discomfort. Since waxing can be painful for some people, consider ways to reduce discomfort. Taking over-the-counter pain medication, such as ibuprofen, or applying cold packs to the skin about 30 minutes before waxing, may help."
+    
+      
+    }
+]
