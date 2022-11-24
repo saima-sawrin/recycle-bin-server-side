@@ -1,0 +1,21 @@
+[
+    {
+        "category_id": 01 ,
+        "title": "iPhone",
+        "image": "shorturl.at/diKU6"
+        
+    },
+    {
+        "service_id": 02 ,
+        "title": "Samsung",
+        "image": "shorturl.at/wKLOZ"
+       
+    },
+    {
+        "service_id": 03 ,
+        "title": "Xiaomi ",
+        "image": "shorturl.at/pvzMV"
+        
+    }  
+   
+]
