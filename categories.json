@@ -1,20 +1,80 @@
 [
     {
-        "category_id": 01 ,
+        "category_id": "01",
         "title": "iPhone",
-        "image": "shorturl.at/diKU6"
+        "image": "https://techcrunch.com/wp-content/uploads/2022/09/Apple-iphone-14-Pro-review-1.jpeg?w=1390&crop=1",
+        "products":[
+            {"p_id":"i01", 
+             "pName":"iPhone 12 Mini",
+            "pImg":"https://cdn.dxomark.com/wp-content/uploads/medias/post-70968/apple_iphone_12_mini_.jpg",
+             "location":"Abashik Ctg",
+            "resalePrice":"50000",
+               "OriginalPrice":"62000",
+               "Use":"1yr"
+
+            },
+            {"p_id":"i02", 
+             "pName":"iPhone 6s Plus",
+            "pImg":"https://adminapi.applegadgetsbd.com/storage/media/large/5111-28430.jpg",
+             "location":"Motijheel Shapla Chattar,Dhaka",
+            "resalePrice":"15000",
+               "OriginalPrice":"24500",
+               "Use":"2yrs"
+
+            }
+        ]
         
     },
     {
-        "service_id": 02 ,
+        "service_id": "02",
         "title": "Samsung",
-        "image": "shorturl.at/wKLOZ"
+        "image": "https://media.wired.com/photos/6202b99c808412610f9e4cac/master/w_1600,c_limit/Gear-Samsung-Galaxy-S22-Ultra,-S22+,-S22-SOURCE-Julian-Chokkattu.jpg",
+        "products":[
+            {"p_id":"s01", 
+             "pName":"Samsung Galaxy S22+",
+            "pImg":"https://mygalaxy.fdl.com.bd/assets/img/s22+/main.png",
+             "location":"New market,Chittagong",
+            "resalePrice":"98000",
+               "OriginalPrice":"143000",
+               "Use":"1yr"
+
+            },
+            {"p_id":"s02", 
+             "pName":"Galaxy M33 5G",
+            "pImg":"https://mygalaxy.fdl.com.bd/assets/img/m33/main.png",
+             "location":"Dhanmondi,Dhaka",
+            "resalePrice":"22000",
+               "OriginalPrice":"30000",
+               "Use":"8month"
+
+            }
+        ]
        
     },
     {
-        "service_id": 03 ,
+        "service_id": "03",
         "title": "Xiaomi ",
-        "image": "shorturl.at/pvzMV"
+        "image": "https://cdn.antaranews.com/cache/800x533/2022/04/09/69bd66a32cbbde81337ab25ab415cb5b-1.png.webp",
+        "products":[
+            {"p_id":"x01", 
+             "pName":"Xiaomi Redmi 10",
+            "pImg":"https://www.mobiledokan.com/wp-content/uploads/2021/10/Xiaomi-Redmi-10-image.jpg",
+             "location":"Chawkbazar , Ctg",
+            "resalePrice":"12500",
+               "OriginalPrice":"19000",
+               "Use":"2yr"
+
+            },
+            {"p_id":"x02", 
+             "pName":"Xiaomi Redmi Note 7S",
+            "pImg":"https://www.mobiledokan.com/wp-content/uploads/2019/08/Xiaomi-Redmi-Note-7S.jpg",
+             "location":"Bashundhara City Shopping Complex,panthopoth , Dhaka",
+            "resalePrice":"11500",
+            "OriginalPrice":"18000",
+            "Use":"1yr"
+
+            }
+        ]
         
     }  
    
