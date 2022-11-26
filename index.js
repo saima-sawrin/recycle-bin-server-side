@@ -4,7 +4,7 @@ const { MongoClient, ServerApiVersion, ObjectId } = require('mongodb');
 
 const jwt = require('jsonwebtoken');
 require('dotenv').config();
-const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+// const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 
 const port = process.env.PORT || 5000;
 
@@ -42,7 +42,8 @@ function verifyJWT(req, res, next) {
 async function run(){
   try{
     const categoriesCollection = client.db('recycleBin').collection('categories');
-
+    const productCollection = client.db('recycleBin').collection('resaleProducts');
+    const usersCollection = client.db('recycleBin').collection('allUsers');
     app.get('/categories', async(req,res)=>{
         const query = {}
         const cursor = categoriesCollection.find(query);
@@ -55,6 +56,31 @@ async function run(){
         const category = await categoriesCollection.findOne(query);
         res.send(category);
         });
+        app.get('/products', async(req,res)=>{
+            const query = {}
+            const cursor = productCollection.find(query);
+            const categories = await cursor.toArray();
+            res.send(categories);
+        })
+        app.get('/users', async (req, res) => {
+            const query = {};
+            const users = await usersCollection.find(query).toArray();
+            res.send(users);
+        });
+
+        // app.get('/users/admin/:email', async (req, res) => {
+        //     const email = req.params.email;
+        //     const query = { email }
+        //     const user = await usersCollection.findOne(query);
+        //     res.send({ isAdmin: user?.role === 'admin' });
+        // })
+        app.post('/users', async (req, res) => {
+            const user = req.body;
+            console.log(user);
+            const result = await usersCollection.insertOne(user);
+            res.send(result);
+        });
+
   }
   finally{
 
@@ -65,7 +91,8 @@ run().catch(e=> console.log(e))
 
 
 app.get('/', async (req, res) => {
-    res.send('doctors portal server is running');
+    res.send('Recycle Bin server is running');
 })
 
-app.listen(port, () => console.log(`Recycle Bin running on ${port}`))
+app.listen(port, () => {console.log(`Recycle Bin running on ${port}`);
+})
