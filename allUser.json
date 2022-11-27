@@ -3,7 +3,7 @@
         "user_id": "01",
         "name": "Safina",
         "email": "saf@ina.com",
-        "rule":"seller",
+        "role":"seller",
         "status": "",
         "photoUrl":"https://ibb.co/dQRf05N"
      
