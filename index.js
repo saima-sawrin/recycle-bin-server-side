@@ -44,6 +44,8 @@ async function run(){
     const categoriesCollection = client.db('recycleBin').collection('categories');
     const productCollection = client.db('recycleBin').collection('resaleProducts');
     const usersCollection = client.db('recycleBin').collection('allUsers');
+    const bookingsCollection = client.db('recycleBin').collection('booking');
+
     app.get('/categories', async(req,res)=>{
         const query = {}
         const cursor = categoriesCollection.find(query);
@@ -77,18 +79,72 @@ async function run(){
             }
             res.status(403).send({ accessToken: '' })
         });
-        app.get('/users/admin/:email', async (req, res) => {
-            const email = req.params.email;
-            const query = { email }
-            const user = await usersCollection.findOne(query);
-            res.send({ isAdmin: user?.role === 'admin' });
-        })
-        app.post('/users', async (req, res) => {
+    
+        app.post('/users', verifyJWT, async (req, res) => {
             const user = req.body;
             console.log(user);
             const result = await usersCollection.insertOne(user);
             res.send(result);
         });
+        app.get('/users/:email', async (req, res) => {
+            const email = req.params.email;
+            const query = { email }
+            const user = await usersCollection.findOne(query);
+            res.send({ isAdmin: user?.rule === 'admin' });
+        })
+
+        app.get('/bookings', verifyJWT, async (req, res) => {
+            const email = req.query.email;
+            const decodedEmail = req.decoded.email;
+
+            if (email !== decodedEmail) {
+                return res.status(403).send({ message: 'forbidden access' });
+            }
+
+            const query = { email: email };
+            const bookings = await bookingsCollection.find(query).toArray();
+            res.send(bookings);
+        });
+
+        app.get('/bookings/:id', async (req, res) => {
+            const id = req.params.id;
+            const query = { _id: ObjectId(id) };
+            const booking = await bookingsCollection.findOne(query);
+            res.send(booking);
+        })
+
+        
+        app.post('/bookings', async (req, res) => {
+            const booking = req.body;
+            console.log(booking);
+            const query = {
+                bookingProduct: booking.product,
+                email: booking.email,
+               
+            }
+
+     
+            const result = await bookingsCollection.insertOne(booking);
+            res.send(result);
+        });
+
+        app.get('/users', verifyJWT, verifyAdmin, async (req, res) => {
+            const query = {};
+            const users = await usersCollection.find(query).toArray();
+            res.send(users);
+        })
+        app.post('/users', verifyJWT, verifyAdmin, async (req, res) => {
+            const user = req.body;
+            const result = await usersCollection.insertOne(user);
+            res.send(result);
+        });
+        app.delete('/users/:id', verifyJWT, verifyAdmin, async (req, res) => {
+            const id = req.params.id;
+            const filter = { _id: ObjectId(id) };
+            const result = await usersCollection.deleteOne(filter);
+            res.send(result);
+        })
+        
 
   }
   finally{
