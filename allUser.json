@@ -1,20 +1,15 @@
 [
     {
         "user_id": "01",
-        "Name": "Safina",
+        "name": "Safina",
         "email": "saf@ina.com",
         "rule":"seller",
         "status": "",
         "photoUrl":"https://ibb.co/dQRf05N"
      
     
-    }
-]
+    },
 
-
-
-
-[
 
     {
         "service_id": "05",
