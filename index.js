@@ -87,7 +87,7 @@ async function run(){
     app.get('/categories/:id', async (req, res) => {
         const id = req.params.id;
         const query = { _id: ObjectId(id) };
-        const category = await categoriesCollection.findMany(query);
+        const category = await categoriesCollection.findOne(query);
         res.send(category);
         });
         app.get('/products', async(req,res)=>{
@@ -163,21 +163,15 @@ async function run(){
             {isSeller: user?.role === 'seller'});
         })
 
-        // app.get('/bookings', async (req, res) => {
-        //     const email = req.query.email;
-        //     const decodedEmail = req.decoded.email;
-
-        //     if (email !== decodedEmail) {
-        //         return res.status(403).send({ message: 'forbidden access' });
-        //     }
-
-        //     const query = { email: email };
-        //     const bookings = await bookingsCollection.find(query).toArray();
-        //     res.send(bookings);
-        // });
+       
 
         app.get('/bookings',  async (req, res) => {
-            const query = {};
+            const email = req.query.email;
+            const decodedEmail = req.decoded.email;
+            if( email !== decodedEmail){
+                return res.status(403).send({ message: 'forbidden access' });
+            }
+            const query = { email: email };
             const bookings= await bookingsCollection.find(query).toArray();
             res.send(bookings);
         })
