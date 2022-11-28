@@ -111,7 +111,7 @@ async function run(){
             const query = { email: email };
             const user = await usersCollection.findOne(query);
             if (user) {
-                const token = jwt.sign({ email }, process.env.ACCESS_TOKEN, { expiresIn: '1h' })
+                const token = jwt.sign({ email }, process.env.ACCESS_TOKEN)
                 return res.send({ accessToken: token });
             }
             res.status(403).send({ accessToken: '' })
@@ -142,7 +142,7 @@ async function run(){
             const email = req.params.email;
             const query = { email }
             const user = await usersCollection.findOne(query);
-            res.send({ isAdmin: user?.role === 'admin' },
+            res.send({ isAdmin: user?.role === 'admin'},
 
             );
         })
@@ -165,18 +165,18 @@ async function run(){
 
        
 
-        app.get('/bookings',  async (req, res) => {
-            const email = req.query.email;
-            const decodedEmail = req.decoded.email;
-            if( email !== decodedEmail){
-                return res.status(403).send({ message: 'forbidden access' });
-            }
-            const query = { email: email };
+        app.get('/bookings', async (req, res) => {
+            // const email = req.query.email;
+            // const decodedEmail = req.decoded.email;
+            // if( email !== decodedEmail){
+            //     return res.status(403).send({ message: 'forbidden access' });
+            // }
+            const query = { };
             const bookings= await bookingsCollection.find(query).toArray();
             res.send(bookings);
         })
 
-        app.get('/bookings/:id', async (req, res) => {
+        app.get('/bookings/:id', verifyJWT, async (req, res) => {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const booking = await bookingsCollection.findOne(query);
@@ -192,15 +192,7 @@ async function run(){
                 email: booking.email,
                
             }
-            const alreadyBooked = await bookingsCollection.find(query).toArray();
 
-            if (alreadyBooked.length) {
-                const message = `You already have a booking on ${booking. bookingProduct}`
-                return res.send({ acknowledged: false, message })
-            }
-
-
-     
             const result = await bookingsCollection.insertOne(booking);
             res.send(result);
         });
